@@ -1,8 +1,9 @@
-# RASPBERRY PI AS A WEBSERVER
+# Projekt YoungGuns Wand - Project Youngguns wall
 
-This repository contains all changes  and new features for the frontend.
+This repository contains the code to run the Youngguns wand.
+URL: https://azeu1-aut-youngguns1.azurewebsites.net/dash/young_guns_muc.php
 
-# Projects
+# CODE files
 
 Current Projects:
 
@@ -10,11 +11,6 @@ Current Projects:
 * `YoungGuns Website` - Projekt von Studenten für Berater in P3 MUC Standort - Als Webpage aufrufbar
 * `News Wand` - Projekt von Studenten für Berater in P3 MUC Standort 
 
-
-
-Future Projects:
-
-* `Berater Wand MUC` - noch bei der Bearbeitung
 
 
 
