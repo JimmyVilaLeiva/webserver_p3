@@ -1,0 +1,186 @@
+/*** Fotos  ***/
+html {
+    box-sizing: border-box;
+}
+body{
+	overflow-x: hidden;
+}
+
+/*** classes for Infocard  of Students - Young Guns wand ***/
+tag{
+    padding: 2px;
+    background-color: green;
+    color: white;
+    font-size: 9px;
+    text-align: right;
+    display:inline-block;      
+}
+
+.block{
+    width: 100%;
+    display:inline-block;
+}
+
+button{
+    padding: 0;
+}
+
+.column {
+    float: left;
+    padding: 0 0px;
+}
+.card {
+    /* width: 150px; */
+    border: 0.5px solid #f1f1f1;
+    
+    text-align: left;
+    /*** border left side ***/
+    margin-left: 0px; 
+    
+}
+
+.row{
+    padding-left: 35px;
+    padding-top: 10px;
+}
+.container {
+    /*padding: 0 10px; */
+    padding-left: 8px;
+}
+.subcompany {
+    color: rgb(178,178,178);
+    font-size: 12px;
+    margin-bottom: 2px;
+    display:inline-block;
+    text-align: left;
+    font-weight: bold;
+    font-family: Calibri;
+}
+
+.name {
+    font-size: 12px;
+    padding: 0px 0px;
+    text-align: left;
+    font-family: Calibri;
+}
+
+
+ /*** Styles for Modalbox - Popup ***/
+
+.modalbox_boddy_fotoSec_textColor{
+    color: RGB(26,53,94);
+    margin: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Calibri;
+}
+
+.modalbox_boddytextColor{
+    font-size: 18px;
+    color: RGB(26,53,94);
+    font-family: Calibri; 
+}
+
+.modalbox_headerbgColor{
+    color: RGB(26,53,94);   
+}
+
+.subcompany_inModalbox{
+    color: rgb(178,178,178);
+    font-size: 18px;
+    margin-bottom: 8px;
+    font-family: Calibri;
+    font-weight: bold;
+}
+
+.contractTypeStyle_inModalbox{
+    color: rgb(178,178,178);
+    font-size: 28px;
+    margin-bottom: 8px;
+    font-family: Calibri;
+    font-weight: bold;
+}
+
+.table_modalBox{
+    /**  nothing to add **/
+}
+
+
+.table_modalBox > tr > td{
+    padding-left: 15px;
+}
+
+th, td {
+    padding-left: 15px;
+}
+.topnav > a {
+    text-decoration: none;
+}
+
+.flags {
+text-align: center;
+}
+.flags ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+      text-align: center; 
+  }
+
+.flags ul li {
+  display: inline;
+}
+
+.modal-title{
+    font-weight: bold;
+    text-align: right;
+    color: white;
+}
+
+.bild_yg{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    
+    width: 135px;
+    height: 140px;
+}   
+
+/*** working for Chrome ***/
+
+.bild_yg_modalbox{
+    /*** workin  only for Firefox **/ 
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    /***  not workin  only for Chrome **/
+    /*** not working for Explorer **/ 
+}
+
+.footer{
+
+    text-align: center;
+
+}
+.modal-dialog{
+    padding-top: 10px;
+}
+
+
+/*** Logo P3  and Icons ***/
+.logoP3{
+    margin-left: 350px;
+    width: 40px;
+    object-fit: cover; 
+   
+}
+.set_iconP3{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+   
+
+}
+.tableText_padding{
+    padding-left: 8px;
+}

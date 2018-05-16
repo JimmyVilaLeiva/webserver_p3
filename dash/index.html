@@ -1,0 +1,227 @@
+
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<metta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link href="https://www.p3-group.com/wp-content/uploads/2015/08/P3-Logo-silber-pur-transparenter-Hintergrund-80x80.png" rel="icon" type="image/png"/>
+  
+    <link rel="stylesheet" href="include/bootstrap.min.css"> 
+    <script src="include/jquery.min.js"></script>
+    <script src="include/popper.min.js"></script>
+    <script src="include/bootstrap.min.js"></script>
+    <link href="youngguns.css" rel="stylesheet"  type="text/css">
+
+<div id="showData" class="row"></div>
+<script>
+  function load(){
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET","database_studenten.php",true);
+    xhttp.send();
+    xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     
+    //alert(this.response);
+        var data_DB = JSON.parse(this.response);
+        //console.log(data_DB);
+        // making HTML
+        var html_sec = "";
+        var pictures = "";
+        var kachel_profil = "";
+        // Make an iteration thougth the database
+        for (var i= 0 ; i < data_DB.length;i++){
+            // take the parsed data from json 
+            var id = data_DB[i].id;
+            var firstname = data_DB[i].firstname;
+            var lastname = data_DB[i].lastname;
+            var abbreviation = data_DB[i].abbreviation;
+            var subComp = data_DB[i].subComp;
+            var contract = data_DB[i].contract;
+            var startday = data_DB[i].startday;
+            var endday = data_DB[i].endday;
+            var supervisor = data_DB[i].supervisor;
+            var projects = data_DB[i].projects;
+            var degree = data_DB[i].degree;
+            var subject_study = data_DB[i].subject_study;
+            var interest = data_DB[i].interest;
+            var skills = data_DB[i].skills;
+            var languages = data_DB[i].languages;
+            var image_name = data_DB[i].image_name;
+            
+           
+          
+            //html_sec += "<p>"+ firstname + " " + lastname + " "+ abbreviation+"</p>";
+            
+            var hasLabel = label_new(startday);
+            //pictures += '<img class="bild_yg img-responsive image-rezise" src="../uploads/'+ image_name + '" alt="Student" width="135" height="140" >'
+            // CREATE SECTION FOR KACHELBOX (PICTURE; SUBCOMP,FULLNAME)
+            kachel_output = '<div class="column" data-toggle="modal" data-target="#myModal_'+ id + '">\
+                            <div class="card" >\
+                                  <img class="bild_yg img-responsive image-rezise" src="../uploads/'+ image_name +'" alt="Student" width="135" height="140" >\
+                                  <div class="container">\
+                                    <div class="name"><b>'+ firstname + ' '+ lastname  +'</b></div>\
+                                    <div>  \
+                                      <div class="subcompany">'+ subComp +'</div>\
+                                       ' +   hasLabel + '\
+                                    </div>\
+                                  </div>\
+                                </div>\
+                            </div>';
+            
+            
+            
+             modalbox_profil = '<div class="modal fade" id="myModal_' + id + '" >\
+                                    <div class="modal-dialog modal-lg">\
+                                      <div class="modal-content">\
+                                        <!-- Modal Header -->\
+                                        <div class="modal-header" >\
+                                           <img  class="logoP3" src="https://azeu1-sys-webcareer1.azurewebsites.net/wp-content/uploads/2017/12/P3_only_RGB_klein.jpg"  alt="P3 Karriere" >\
+                                        </div><!-- Modal body -->\
+                                        <div class="modal-body row mdl-box">\
+                                            <div class="col-sm-3 img-content">\
+                                              <img class="bild_yg_modalbox img-responsive image-rezise" src="../uploads/' + image_name + '" class="img-box" alt="Student" width="170" height="180" >\
+                                              <div>\
+                                                    <h4 class ="modalbox_boddy_fotoSec_textColor" >'+  firstname + ' ' + lastname + ' (' + abbreviation + ')' + '<br>\
+                                                    <spam class="subcompany_inModalbox">' + subComp + '</spam></h4>\
+                                              </div>\
+                                            </div>\
+                                            <div class="col-sm-9 text-content">\
+                                                <div>\
+                                                <h3 class="contractTypeStyle_inModalbox"><img src="icons/P3 book_gray.png" alt="icon" class="set_iconP3"/><b>' + contract + '</b></h3></div>\
+                                                <table>\
+                                                    <tr>\
+                                                        <td>\
+                                                            <img src="icons/academic cap_blue.png" alt="icon" class="set_iconP3"/>\
+                                                        </td>\
+                                                        <td>\
+                                                            <h4 class ="modalbox_boddytextColor size_modal_table" > <b>Studium </b>\</h4>\
+                                                        </td>\
+                                                        <td >\
+                                                            <h4 class ="modalbox_boddytextColor" > '+ degree + '-' + subject_study + '</h4>\
+                                                        </td>\
+                                                    </tr>\
+                                                    <tr>\
+                                                        <td>\
+                                                            <img src="icons/person with tie_blue.png" alt="icon" class="set_iconP3"/>\
+                                                        </td>\
+                                                        <td>\
+                                                            <h4 class ="modalbox_boddytextColor" > <b>Betreuer </b></h4>\
+                                                        </td>\
+                                                        <td>\
+                                                            <h4 class ="modalbox_boddytextColor">'+ supervisor+ '</h4>\
+                                                        </td>\
+                                                    </tr>\
+                                                    <tr>\
+                                                        <td>\
+                                                            <img src="icons/project management services_blue.png" alt="icon" class="set_iconP3"/>\
+                                                        </td>\
+                                                        <td>\
+                                                            <h4 class ="modalbox_boddytextColor" > <b> Projekte </b></h4>\
+                                                        </td>\
+                                                        <td>\
+                                                            <h4 class ="modalbox_boddytextColor">'+ projects + '</h4>\
+                                                        </td>\
+                                                    </tr>\
+                                                    <tr>\
+                                                        <td>\
+                                                            <img src="icons/calender_blue.png" alt="icon" class="set_iconP3"/>\
+                                                        </td>\
+                                                        <td>\
+                                                            <h4 class ="modalbox_boddytextColor" > <b>Bei P3</b> </h4>\
+                                                        </td>\
+                                                        <td>\
+                                                            <h4 class ="modalbox_boddytextColor">Von '+ startday + ' bis ' + endday + '</h4>\
+                                                        </td>\
+                                                    </tr>\
+                                                    <tr>\
+                                                        <td>\
+                                                           <img src="icons/computer screen with gear-wheel and software code_blue.png" alt="icon" class="set_iconP3"/>\
+                                                        </td>\
+                                                        <td>\
+                                                            <h4 class ="modalbox_boddytextColor" > <b>Skills</b></h4>\
+                                                        </td>\
+                                                        <td>\
+                                                            <h4 class ="modalbox_boddytextColor">' + skills + '</h4>\
+                                                        </td>\
+                                                    </tr>\
+                                                    <tr>\
+                                                        <td>\
+                                                          <img src="icons/target with arrow_blue.png" alt="icon" class="set_iconP3"/>\
+                                                        </td>\
+                                                        <td>\
+                                                            <h4 class ="modalbox_boddytextColor" > <b>Interessen </b></h4>\
+                                                        </td>\
+                                                        <td>\
+                                                            <h4 class ="modalbox_boddytextColor">'+  interest + ' </h4>\
+                                                        </td>\
+                                                    </tr>\
+                                                    <tr>\
+                                                        <td>\
+                                                            <img src="icons/persons with speech balloons_blue.png" alt="icon" class="set_iconP3"/>\
+                                                        </td>\
+                                                        <td>\
+                                                            <h4 class ="modalbox_boddytextColor" > <b>Sprachen</b></h4>\
+                                                        </td>\
+                                                        <td>\
+                                                            <h4 class ="modalbox_boddytextColor">'+ languages +'</h4>\
+                                                        </td>\
+                                                    </tr>\
+                                                </table>\
+                                            </div>\
+                                        </div>\
+                                        <!-- Modal footer -->\
+                                        <div class="modal-footer">\
+                                          <button type="button" class="btn" data-dismiss="modal">Close</button>\
+                                        </div>\
+                                      </div>\
+                                    </div>\
+                                  </div>\
+                                ';
+            
+            
+            //kachel_profil = make_kachelProfil(id,firstname,lastname,subComp,image_name);
+            kachel_profil += kachel_output;
+            kachel_profil += modalbox_profil;
+            
+             // CREATE SECTION FOR KACHELBOX (PICTURE; SUBCOMP,FULLNAME)
+           
+        }
+        document.getElementById("showData").innerHTML = kachel_profil;
+    }
+  };
+    
+  }
+    
+load(); // This will run on page load
+setInterval(function(){
+    load() // this will run after every 5 seconds
+}, 500000);
+
+
+function label_new(_startday){
+    var add_intoHTML = '';
+    // calculate worked days
+    
+    var firstday_contract = new Date(_startday);
+    var current_date = new Date();
+    var timeDiff = Math.abs(firstday_contract.getTime() - current_date.getTime());
+    var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
+        
+        if(diffDays < 31){
+            //alert ("kleiner als 31");
+            add_intoHTML = '<tag>NEW</tag>';
+            return add_intoHTML;
+            
+        }else{
+            //alert("grosser als 31");
+            return add_intoHTML;
+        }
+        
+}
+
+
+
+
+
+
+</script>

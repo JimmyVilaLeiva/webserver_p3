@@ -1,0 +1,309 @@
+/* Titel */
+.titel {
+    margin-top: 20px;           
+}
+
+.search{
+    margin-top: 160px;
+}
+
+/* ------------ For custom Checkmarks --------------- */
+
+.containercheck {
+    display: block;
+    position: relative;
+    padding-left: 10px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.containercheck input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: darkgrey;
+    border-radius: 50%;
+ 
+}
+
+/* On mouse-over, add a grey background color */
+.containercheck:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.containercheck input:checked ~ .checkmark {
+    background-color: Green;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.containercheck input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.containercheck .checkmark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+
+}
+    
+/* ------------------ Table style -------------------*/
+table {
+    border-collapse: collapse;
+    max-width: 600px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+  
+/*------------------- Sidenav Style for Update form -------------*/
+.sidenav {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #9E9E9E;
+    overflow-x: hidden;
+    padding-top: 0px;
+}
+
+
+/*--------------Style for side with table and filter input field ------*/
+.main {
+    margin-left: 100px; /* Same as the width of the sidenav */
+    margin-top: 50px;
+    padding: 0px 10px;
+    
+    
+}
+
+
+
+       
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}
+
+
+/*--------------Style for Topnav with titel------*/
+
+.topnav {
+    overflow: hidden;
+    background-color: #9E9E9E;
+    text-align: center;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index:10;
+    font-size: 24px;
+    text-align: center;
+    padding:5px 0px;
+    color: #f2f2f2;
+}
+
+
+
+.topnav a.active {
+  background-color: white;
+  color: #7B7B78;
+
+}
+
+/* Input fields design*/    
+input[type=text],  select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=file] {
+    background-color: White;
+    max-width: 512px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    
+}
+
+input[type=date] {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;  
+    max-width:	512px;
+ 
+}
+
+
+input[type=submit]:hover {
+    background-color: blue;
+}
+
+.body{
+      overflow: hidden;
+    
+}
+.container {
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 800px;
+    margin-top: 40px;
+  
+  
+
+ }
+
+
+ /*The border for Sub Company and Contract type options*/      
+.border{
+    display:inline-block;
+   	vertical-align: top;
+    width:	256px;
+   	padding: 10px 0px;
+   	border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    min-height: 150px;
+  }
+
+ /*The border for language options*/  
+.borderL{
+    
+   	vertical-align: top;
+    max-width:	512px;
+   	padding: 10px 0px;
+   	border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+    
+ /*Spacer to enable the allignment of all the input fields*/ 
+.block{
+ 	display:inline-block;
+   	vertical-align: top;
+    width:	256px;
+    margin-bottom: 12px;
+ }
+ 
+/*Large Spaceer to enable the allignment of Language options*/ 
+ .blockL{
+ 	display:inline-block;
+   	vertical-align: top;
+    max-width:	512px;
+    margin-bottom: 12px;
+ }
+ 
+/*Small Spacer for allignment of the abbrevation input field*/    
+.blocksmall{
+ 	display:inline-block;
+   	vertical-align: top;
+    width:	60px;
+    margin-bottom: 12px;
+ } 
+ 
+/*** Extra Css for Table ***/
+.table_students{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table_students td, .table_students th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table_students tr:nth-child(even){background-color: #f2f2f2;}
+
+.table_students tr:hover {background-color: #ddd;}
+
+.table_students th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: dimgray;
+    color: white;
+}
+
+/* updates.php */
+.bild_yg{
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+    overflow: auto;     
+    display: flex;
+    object-fit:cover;
+    
+    /*** for IE Browser ***/ 
+    display: -webkit-flex;
+    flex-flow: column nowrap;
+    -webkit-flex-flow: column nowrap;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+  
+}
+
