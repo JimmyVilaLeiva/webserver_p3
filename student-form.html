@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>YoungGuns Muc</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="https://www.p3-group.com/wp-content/uploads/2015/08/P3-Logo-silber-pur-transparenter-Hintergrund-80x80.png" rel="icon" type="image/png">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- include for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" >
+    <!-------------------------------- CSS for Student Form ------------------------------------->
+    <link rel="stylesheet" href="student-form.css" />
+    
+</head>
+<body>
+
+<!-- ----------------------------------- STUDENT FORM ------------------------------------- -->
+
+
+<div class="container">  
+  <h1>Student Form MUC</h1>
+
+  <form  action="student-form.php" method="post" enctype='multipart/form-data'>
+  
+    <!-- Personal Information -->
+    <div class="block">
+    	<label for="firstname">First Name</label>
+    	<input type="text" id="firstname" placeholder="Vorname" name="firstname" required >
+	</div>
+    	<div class="block">
+    	<label for="lastname">Last Name</label>
+    <input type="text" id="lastname" placeholder="Nachname" name="lastname" required >
+	</div>
+    <div class="blocksmall">
+    	<label for="abbreviation">Abbreviation</label>
+    	<input type="text" id="abbreviation" name="abbreviation" placeholder="XXX" required pattern="{3}"  title="Three lower case letters" >
+	</div>
+    
+   	
+	<!-- Contract Information -->
+	<div>
+    	<div  class="border">	
+            <label >Sub Company</label>
+            <div class="tooltip">
+                <i class="fa fa-info-circle"></i>
+                <span class="tooltiptext">If necessary, ask your superviser or check your contract</span>
+            </div> 
+        
+			<div class="check">
+    			<input type="radio"  id="p3_subsidiary" name="p3_subsidiary" value="Automotive" required>Automotive
+   			</div>
+  			<div class="check">
+				<input type="radio"  id="p3_subsidiary" name="p3_subsidiary" value="System" required>Energy
+  			</div>
+   			<div class="check">
+  				<input type="radio"  id="p3_subsidiary" name="p3_subsidiary" value="Engineering" required>Engineering
+    		</div>
+   			<div class="check">
+				<input type="radio"  id="p3_subsidiary" name="p3_subsidiary" value="System" required>Systems
+  			</div>
+
+    	</div>
+    
+    	<div class="border">
+    		<label>Type of contract</label>
+            <div class="tooltip">
+                <i class="fa fa-info-circle"></i>
+                <span class="tooltiptext">If necessary, ask your superviser or check your contract</span>
+            </div> 
+			<div class="check">
+    			<input type="radio"  id="type_contract" name="type_contract" value="Praktikant" required>Internship - Praktikant
+    		</div>
+    		<div class="check">
+  				<input type="radio"  id="type_contract" name="type_contract" value="Thesis" required>Thesis
+    		</div>
+    		<div class="check">
+				<input type="radio"  id="type_contract" name="type_contract" value="Werkstudent" required>Werkstudent
+  			</div>
+    	</div>
+    </div>
+    <!-- Workrelation Start and End  -->
+    <div>
+    	<div class="block" >
+			<label for="contract_date_from">Start</label>
+    		<input type="date" id ="contract_date_from" name="contract_date_from" placeholder="YYYY-MM-DD" required  title="YYYY-MM-DD">
+   		</div>
+    	<div class="block" >
+    		<label for="contract_date_till">End</label>
+    		<input type="date" id="contract_date_till" name="contract_date_till" placeholder="YYYY-MM-DD" required title="YYYY-MM-DD" >
+    	</div>
+	</div>
+    
+    <div>
+    	<div class="block" >
+			<label for="supervisor">Supervisor</label>
+    		<input type="text" id ="supervisor" name="supervisor" placeholder="Vorname, Nachname" required>
+    	</div>
+    	<div class="block" >
+    		<label for="projects">Main Project</label>
+    		<input type="text" id="projects" placeholder="Projekt" name="projects" required>
+    	</div>
+	</div>
+    
+    <!-- University Information -->
+   	<div>
+    	<div class="block">
+			<label for="study_subject">Course of Study</label>
+    		<input type="text" id ="study_subject" placeholder="Mein Studium"  name="study_subject" required>
+    	</div>
+    
+    	<div class="block" style="margin-top: 30px; ">
+    		<input type="radio"  id="degree" name="degree" value="Master" required>Master
+  			<input type="radio"  id="degree" name="degree" value="Bachelor" required>Bachelor
+ 		</div>
+    </div>
+   	
+    <!-- Interests and Competences -->
+    <div>
+    	<div class="block" >
+			<label for="interest">Interests</label>
+    		<input type="text" id ="interest" name="interest" placeholder="E-Mobility;Batteries;" required>
+    	</div>
+    	<div class="block" >
+    		<label for="skills">Competences</label>
+    		<input type="text" id="skills" name="skills" placeholder="Python;VBA;" required>
+    	</div>
+	</div>
+	
+    <!-- List of most common Languages -->
+    <div class="borderL">
+        <label>Languages</label>
+        <div class="blockL">
+            <ul class="checkbox-grid" >
+                  <li><input type="checkbox" name="languages[]" value="AR">Arabic</li>
+                  <li><input type="checkbox" name="languages[]" value="ZH">Chinese</li>
+                  <li><input type="checkbox" name="languages[]" value="CS">Czech</li>
+                  <li><input type="checkbox" name="languages[]" value="DA">Danish</li>
+                  <li><input type="checkbox" name="languages[]" value="NL">Dutch</li>
+                  <li><input type="checkbox" name="languages[]" value="EN">English</li>
+                  <li><input type="checkbox" name="languages[]" value="FI">Finnish</li>
+                  <li><input type="checkbox" name="languages[]" value="FR">French</li>
+                  <li><input type="checkbox" name="languages[]" value="DE">German</li>
+                  <li><input type="checkbox" name="languages[]" value="EL">Greek</li>
+                  <li><input type="checkbox" name="languages[]" value="HI">Hindi</li>
+                  <li><input type="checkbox" name="languages[]" value="HU">Hungarian</li>
+                  <li><input type="checkbox" name="languages[]" value="IT">Italian</li>
+                  <li><input type="checkbox" name="languages[]" value="JA">Japanese</li> 
+                  <li><input type="checkbox" name="languages[]" value="KO">Korean</li>
+                  <li><input type="checkbox" name="languages[]" value="NO">Norwegian</li>
+                  <li><input type="checkbox" name="languages[]" value="PL">Polish</li>
+                  <li><input type="checkbox" name="languages[]" value="PT">Portuguese</li>
+                  <li><input type="checkbox" name="languages[]" value="RU">Russian</li>
+                  <li><input type="checkbox" name="languages[]" value="SK">Slovak</li>
+                  <li><input type="checkbox" name="languages[]" value="SL">Slovenian</li>
+                  <li><input type="checkbox" name="languages[]" value="ES">Spanish</li>
+                  <li><input type="checkbox" name="languages[]" value="SV">Swedish </li>
+                  <li><input type="checkbox" name="languages[]" value="TR">Turkish</li>
+            </ul>
+        </div>  
+    </div>  
+       <hr>
+      <div class="alert alert-warning">
+                <spam class="alert-msg" >Important!</spam> Rename your file first as  <br>yourabbreviation.jpg|png 
+          <br>
+     </div>
+      <hr>
+    <label>Foto Upload</label>
+    <div class="tooltip">
+        <i class="fa fa-info-circle"></i>
+        <span class="tooltiptext">Max size and optimal aspect ration </span>
+    </div> 
+    <div>
+        <input name="fileToUpload" id="fileToUpload" required type="file" onchange="GetFileSize()" >
+         <p id="fp"></p>
+    </div>     
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+    
+    
+<script>
+    function GetFileSize() {
+        var fi = document.getElementById('fileToUpload'); // GET THE FILE INPUT.
+
+        // VALIDATE OR CHECK IF ANY FILE IS SELECTED.
+        if (fi.files.length > 0) {
+            // RUN A LOOP TO CHECK EACH SELECTED FILE.
+            for (var i = 0; i <= fi.files.length - 1; i++) {
+
+                var fsize = fi.files.item(i).size;      // THE SIZE OF THE FILE.
+                document.getElementById('fp').innerHTML =
+                    document.getElementById('fp').innerHTML + '<br /> ' +
+                        '<b>' + Math.round((fsize / 1024)) + '</b> KB';
+                var sizePicture = Math.round((fsize / 1024));
+                
+                if (sizePicture > 500000 ){
+                    
+                    
+                    alert( "Your File is to large!"); 
+                    document.getElementById('fp').innerHTML =
+                    document.getElementById('fp').innerHTML + '<br /> ' +
+                        '<b style="color: red;">' + Math.round((fsize / 1024)) + '</b> KB';
+                }
+               
+            }
+        }
+    }
+</script>
+
+</html>

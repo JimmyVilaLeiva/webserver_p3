@@ -1,0 +1,58 @@
+
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<metta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link href="https://www.p3-group.com/wp-content/uploads/2015/08/P3-Logo-silber-pur-transparenter-Hintergrund-80x80.png" rel="icon" type="image/png"/>
+  
+    <link rel="stylesheet" href="include/bootstrap.min.css"> 
+    <script src="include/jquery.min.js"></script>
+    <script src="include/popper.min.js"></script>
+    <script src="include/bootstrap.min.js"></script>
+    <link href="youngguns.css" rel="stylesheet"  type="text/css">
+
+<div id="showData" class="row"></div>
+<script>
+  function load(){
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET","Liststudenten.php",true);
+    xhttp.send();
+    xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     
+    //alert(this.response);
+        var data_DB = JSON.parse(this.response);
+        //console.log(data_DB);
+        // making HTML
+        var pictures = "";
+        // Make an iteration thougth the database
+        for (var i= 0 ; i < data_DB.length;i++){
+            // take the parsed data from json 
+          
+            var image_name = data_DB[i].image_name;
+            
+           
+          
+            //html_sec += "<p>"+ firstname + " " + lastname + " "+ abbreviation+"</p>";
+            
+            pictures += '<img class="bild_yg img-responsive image-rezise" src="../uploads/'+ image_name + '" alt="Student" width="135" height="140" >'
+            // CREATE SECTION FOR KACHELBOX (PICTURE; SUBCOMP,FULLNAME)
+            
+            
+             // CREATE SECTION FOR KACHELBOX (PICTURE; SUBCOMP,FULLNAME)
+           
+        }
+        document.getElementById("showData").innerHTML = pictures;
+    }
+  };
+    
+  }
+    
+load(); // This will run on page load
+setInterval(function(){
+    load() // this will run after every 5 seconds
+}, 8000);
+
+
+</script>

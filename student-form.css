@@ -1,0 +1,201 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+
+
+/* Input fields design*/    
+input[type=text],  select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  
+}
+
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=file] {
+    background-color: White;
+    max-width: 512px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    
+}
+
+input[type=date] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;  
+    max-width:	512px;
+ 
+}
+
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container_tab  {
+    border-radius: 5px;
+    background-color: aquamarine;
+    padding: 20px;
+    max-width: 50%; 
+    height: 50px;
+   
+    
+    
+        
+}
+    
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    max-width: 700px;
+    position: absolute;
+
+ }
+
+
+ /*The border for Sub Company and Contract type options*/      
+.border{
+    display:inline-block;
+   	vertical-align: top;
+    width:	256px;
+   	padding: 10px 0px;
+   	border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    min-height: 160px;
+  }
+
+ /*The border for language options*/  
+.borderL{
+    
+   	vertical-align: top;
+    max-width:	512px;
+   	padding: 10px 0px;
+   	border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 12px;
+  }
+    
+ /*Spacer to enable the allignment of all the input fields*/ 
+.block{
+   
+ 	display:inline-block;
+   	vertical-align: top;
+    width:	256px;
+    margin-bottom: 12px;
+ }
+ 
+/*Large Spaceer to enable the allignment of Language options*/ 
+ .blockL{
+ 	display:inline-block;
+   	vertical-align: top;
+    max-width:	512px;
+    margin-bottom: 12px;
+ }
+ 
+/*Small Spacer for allignment of the abbrevation input field*/    
+.blocksmall{
+ 	display:inline-block;
+   	vertical-align: top;
+    width:	128px;
+    margin-bottom: 12px;
+ } 
+ 
+    
+/*allignment of the checkboxes*/    
+.check {
+    display: block;
+  	position: relative;
+    margin-bottom: 12px;
+    margin-left: 30px;
+  	
+}
+
+
+/*grid allignment of checkboxes for the language option*/
+.checkbox-grid li {
+    display:block;
+    float: left;
+    min-width: 30%;
+    
+}
+
+     /* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; 
+    margin-bottom: 12px;
+    
+    /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when your mouse is over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+} 
+
+/* Alert to upload pictures*/
+.alert-msg{
+    
+    color : red;
+    font-weight: bold;
+}
